@@ -13,3 +13,12 @@
 .deaths{
     border-bottom: 10px solid rgba(255,0,0, 0.5);
 }
+
+.wordsInfected{color: blue;}
+.wordsRecovered{color: green;}
+.wordsDeaths{color: red;}
+@media(max-width: 770px){
+    .card{
+        margin: 2% 0 !important;
+    }
+}

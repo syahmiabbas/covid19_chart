@@ -10,6 +10,7 @@
     "axios": "^0.19.2",
     "chart.js": "^2.9.3",
     "classnames": "^2.2.6",
+    "dayjs": "^1.8.26",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.9.0",
     "react-countup": "^4.3.3",
@@ -36,18 +37,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/epicness0022/covid19_chart.git"
-  },
-  "author": "Syahmi",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/epicness0022/covid19_chart/issues"
-  },
-  "homepage": "https://github.com/epicness0022/covid19_chart#readme"
+  }
 }
