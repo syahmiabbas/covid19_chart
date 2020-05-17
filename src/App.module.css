@@ -9,6 +9,10 @@ body{
   flex-direction: column;
 }
 
+.optionButtons{
+  margin: 20px 0 !important;
+}
+
 .image{
   width: 370px;
   margin-top: 50px;

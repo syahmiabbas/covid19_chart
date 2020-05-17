@@ -12,7 +12,7 @@ class App extends React.Component {
     data: {},
     previousData: {},
     country: '',
-    showCharts: false,
+    showCharts: true,
     showRanking: false
   }
 
@@ -48,12 +48,9 @@ class App extends React.Component {
   }
 
   hideShowComponents = (data) => {
-    console.log(data);
-    if (data === 'ranking') {
-      this.setState({showRanking : !this.state.showRanking});
-    } else {
-      this.setState({showCharts : !this.state.showCharts});
-    }
+    this.setState({showCharts : !this.state.showCharts});
+    this.setState({showRanking : !this.state.showRanking});
+    
   }
 
   render() {

@@ -78,42 +78,31 @@ export const fetchRankings = async() => {
     try{
         const {data} = await axios.get(`${url}/confirmed`);
 
-        data.sort(function(a,b){
-            return b.confirmed - a.confirmed;
-            }
-        );
         const array = [];
         for(let i = 0; i < data.length; i++){
-            // console.log(array.find(element => element == data[i].countryRegion))
-            console.log(array.find(element => data[i].countryRegion))
-            if(array.find(element => element == data[i].countryRegion) === undefined){
+            if(array.find(element => element.countryRegion === data[i].countryRegion) === undefined){
                 let json = {};
                 json.countryRegion = data[i].countryRegion;
+                json.active = data[i].active;
                 json.confirmed = data[i].confirmed;
-                json.recovered = data[i].recovered;
                 json.deaths = data[i].deaths;
                 array.push(json);
             } else{
-                let foundIndex = array.findIndex(x => x.countryRegion == array.countryRegion);
-                array[foundIndex].confirmed += data[i].confirmed;
-                array[foundIndex].recovered += data[i].recovered;
-                array[foundIndex].deaths += data[i].deaths;
+                var item = array.find(element => element.countryRegion === data[i].countryRegion)
+                if (item) {
+                    item.confirmed += data[i].confirmed;
+                    item.active += data[i].active;
+                    item.deaths += data[i].deaths;
+                }
             }
         }
+
+        array.sort(function(a,b){
+            return b.confirmed - a.confirmed;
+            }
+        );
         
-        // console.log(data);
-        console.log(array);
-        // for(let i = 0; i< 10;i++){
-        //     let json = {};
-        //     json.countryRegion = data[i].countryRegion;
-        //     json.confirmed = data[i].confirmed;
-        //     json.recovered = data[i].recovered;
-        //     json.deaths = data[i].deaths;
-        //     json.active = data[i].confirmed;
-        //     array.push(json);
-        // }
-        // console.log(array);
-        // return array;
+        return array;
     } catch(error){
         console.log(error);
     }
