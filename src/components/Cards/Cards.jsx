@@ -27,7 +27,7 @@ const Cards = ({data: {confirmed, recovered, deaths, lastUpdate, percentageRecov
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Recovered</Typography>
                         <Typography variant="h5">
-                            <CountUp start = {0} duration={2.5} separator="," end={recovered.value}/> <span className={styles.wordsRecovered}>({percentageRecovered}%)</span><br/>
+                            <CountUp start = {0} duration={2.5} separator="," end={recovered.value}/> <span className={styles.wordsRecovered}>(<CountUp start = {0} duration={2.5} separator="," decimals={2} end={parseFloat(percentageRecovered)}/>%)</span><br/>
                             <span className={styles.wordsRecovered}>(+ <CountUp start = {0} duration={2.5} separator="," end={prevRecovered}/>)</span>
                         </Typography>
                         <Typography color="textSecondary">{new Date(lastUpdate).toDateString() }</Typography>
@@ -38,7 +38,7 @@ const Cards = ({data: {confirmed, recovered, deaths, lastUpdate, percentageRecov
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Deaths</Typography>
                         <Typography variant="h5">
-                            <CountUp start = {0} duration={2.5} separator="," end={deaths.value}/> <span className={styles.wordsDeaths}>({percentageDeaths}%)</span><br/>
+                            <CountUp start = {0} duration={2.5} separator="," end={deaths.value}/> <span className={styles.wordsDeaths}>(<CountUp start = {0} duration={2.5} separator="," decimals={2} end={parseFloat(percentageDeaths)}/>%)</span><br/>
                             <span className={styles.wordsDeaths}>(+ <CountUp start = {0} duration={2.5} separator="," end={prevDeaths}/>)</span>
                         </Typography>
                         <Typography color="textSecondary">{new Date(lastUpdate).toDateString() }</Typography>

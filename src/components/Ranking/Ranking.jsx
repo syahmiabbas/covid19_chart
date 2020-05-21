@@ -4,7 +4,8 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import Avatar from '@material-ui/core/Avatar';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import styles from './Ranking.module.css';
 
@@ -16,6 +17,9 @@ export class Ranking extends Component {
         data: []
     }
     async componentDidMount(){
+        AOS.init({
+          duration : 2000
+        });
         this.setState({data: await fetchRankings()});
     }
     render() {
@@ -30,8 +34,11 @@ export class Ranking extends Component {
           >
           Top 10 highest cases by country
           </Typography>
+          
           <List className={styles.list}>
+          
             {data.slice(0, 10).map((items, i) => 
+            <div data-aos='fade-up'>
               <ListItem key={i} className={styles.listItem}>
                   <ListItemIcon>
                     <Typography
@@ -70,8 +77,11 @@ export class Ranking extends Component {
                   }
                 />
               </ListItem>
+              </div>
             )}
+            
           </List>
+          
           </div>
         )
     }

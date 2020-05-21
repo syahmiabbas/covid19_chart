@@ -25,8 +25,8 @@ class App extends React.Component {
       previousFetchedData.prevDeaths = fetchedData.deaths.value - previousFetchedData.prevDeaths;
       previousFetchedData.prevRecovered = fetchedData.recovered.value - previousFetchedData.prevRecovered;
 
-      fetchedData.percentageRecovered = ((100 * fetchedData.recovered.value) / fetchedData.confirmed.value).toFixed(2);;
-      fetchedData.percentageDeaths = ((100 * fetchedData.deaths.value) / fetchedData.confirmed.value).toFixed(2);;
+      fetchedData.percentageRecovered = ((100 * fetchedData.recovered.value) / fetchedData.confirmed.value).toFixed(2);
+      fetchedData.percentageDeaths = ((100 * fetchedData.deaths.value) / fetchedData.confirmed.value).toFixed(2);
 
       this.setState({ data: fetchedData, previousData: previousFetchedData });
     }
@@ -40,8 +40,8 @@ class App extends React.Component {
       previousFetchedData.prevDeaths = fetchedData.deaths.value - previousFetchedData.prevDeaths;
       previousFetchedData.prevRecovered = fetchedData.recovered.value - previousFetchedData.prevRecovered;
 
-      fetchedData.percentageRecovered = ((100 * fetchedData.recovered.value) / fetchedData.confirmed.value).toFixed(2);;
-      fetchedData.percentageDeaths = ((100 * fetchedData.deaths.value) / fetchedData.confirmed.value).toFixed(2);;
+      fetchedData.percentageRecovered = ((100 * fetchedData.recovered.value) / fetchedData.confirmed.value).toFixed(2);
+      fetchedData.percentageDeaths = ((100 * fetchedData.deaths.value) / fetchedData.confirmed.value).toFixed(2);
 
       this.setState({ data: fetchedData, previousData: previousFetchedData, country: country });
     }
